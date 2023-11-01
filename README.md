@@ -7,7 +7,7 @@
 
 ## Interface WEB (HTML/CSS/JavaScript)
     - https://github.com/ColorlibHQ/AdminLTE/
-    - A ideia principal foi fazer uma interface apresentavel, focado no backend. Nao tive muito tempo para fazer meu propria front end :/
+    - A ideia principal foi fazer uma interface apresentavel, focado no backend. Nao tive muito tempo para fazer meu proprio front end :/
 
 ## Dependencias
 ```sh
