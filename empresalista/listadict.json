@@ -1,0 +1,23 @@
+[
+    {
+        "empresa": "Empresa",
+        "prcwin": "Inativo",
+        "servidor": "Inativo",
+        "api": "Inativo",
+        "agendador": "Inativo"
+    },
+    {
+        "empresa": "Empresa",
+        "prcwin": "PID n\u00e3o encontrado",
+        "servidor": "PID n\u00e3o encontrado",
+        "api": "PID n\u00e3o encontrado",
+        "agendador": "PID n\u00e3o encontrado"
+    },
+    {
+        "empresa": "Empresa",
+        "prcwin": "Inativo",
+        "servidor": "Inativo",
+        "api": "Inativo",
+        "agendador": "Inativo"
+    }
+]

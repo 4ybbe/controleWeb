@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Empresa | Controle</title>
+  
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="/templates/plugins/fontawesome-free/css/all.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="/templates/dist/css/adminlte.min.css">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="/templates/plugins/dataTables-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="/templates/plugins/dataTables-responsive/css/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" href="/templates/plugins/dataTables-buttons/css/buttons.bootstrap4.min.css">
+</head>
+
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+      <!-- Navbar -->
+      <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+        <!-- Left navbar links -->
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+          </li>
+        </ul>
+  
+      </nav>
+      <!-- /.navbar -->
+  
+      <!-- Main Sidebar Container -->
+      <aside class="main-sidebar sidebar-dark-primary elevation-4">
+        <!-- Brand Logo -->
+        <a href="home" class="brand-link">
+          <img src="/templates/dist/img/logo.png" alt="Empresa" class="brand-image img-circle elevation-3"
+            style="opacity: .8">
+          <span class="brand-text font-weight-light">Empresa</span>
+        </a>
+  
+        <!-- Sidebar -->
+        <div class="sidebar">
+  
+          <!-- Sidebar Menu -->
+          <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+              <!-- Add icons to the links using the .nav-icon class
+                 with font-awesome or any other icon font library -->
+              <li class="nav-item">
+                <a href="home" class="nav-link">
+                  <i class="fas fa-wine-glass-alt"></i>
+                  <p>
+                    Painel
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="home" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Empresa</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="backup" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Backup</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="status" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Status</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+          <!-- /.sidebar-menu -->
+        </div>
+        <!-- /.sidebar -->
+      </aside>
+  
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-sm-6">
+                <h1>Controle</h1>
+              </div>
+              <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                  <li class="breadcrumb-item"><a href="#">Home</a></li>
+                  <li class="breadcrumb-item active">Controle</li>
+                </ol>
+              </div>
+            </div>
+          </div><!-- /.container-fluid -->
+        </section>
+
+
+
+
+
+<div class="card-header">
+  <h3 class="card-title">Logs backup | CLOUD</h3>
+  </div>
+
+  <div class="card-body">
+    <table id="GRID" class="table table-bordered table-striped table-hover dataTable no-footer"
+      aria-describedby="GRID_info">
+      <thead>
+        <tr>
+          <th>Servidor</th>
+          <th>Host</th>
+          <th>Data/Hora</th>
+          <th>Nome BD</th>
+          <th>Pasta|Caminho</th>
+          <th>Tamanho Arquivo</th>
+          <th>Servidor Destino</th>
+          <th>Arquivo</th>
+          <th>Up</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for info in bck %}
+        <tr>
+          <td class="dtr-control sorting_1" tabindex="0">{{info['servidor']}}</td>
+          <td>{{info['host']}}</td>
+          <td>{{info['datahora']}}</td>
+          <td>{{info['nome_bd']}}</td>
+          <td>{{info['pastacaminho']}}</td>
+          <td>{{info['tamanhoarquivo']}}</td>
+          <td>{{info['sv_destino']}}</td>
+          <td>{{info['nomearquivo']}}</td>
+          <td>
+            <a href="/download/{{ info['nomearquivo'] }}" class="text-success" title="Download">
+              <i class="fas fa-play"></i>
+            </a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div> <!-- /.card -->
+
+  <!-- jQuery -->
+  <script src="/templates/plugins/jquery/jquery.min.js"></script>
+  <!-- Bootstrap 4 -->
+  <script src="/templates/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- AdminLTE App -->
+  <script src="/templates/dist/js/adminlte.min.js"></script>
+  <!-- AdminLTE for demo purposes -->
+
+  <!-- DataTables -->
+  <script src="/templates/plugins/dataTables/jquery.dataTables.min.js"></script>
+  <script src="/templates/plugins/dataTables-bs4/js/dataTables.bootstrap4.min.js"></script>
+
+  <script src="/templates/plugins/dataTables-responsive/js/dataTables.responsive.min.js"></script>
+  <script src="/templates/plugins/dataTables-responsive/js/responsive.bootstrap4.min.js"></script>
+
+  <script src="/templates/plugins/dataTables-buttons/js/dataTables.buttons.min.js"></script>
+  <script src="/templates/plugins/dataTables-buttons/js/buttons.bootstrap4.min.js"></script>
+
+  <script src="/templates/plugins/dataTables-buttons/js/buttons.html5.min.js"></script>
+  <script src="/templates/plugins/dataTables-buttons/js/buttons.print.min.js"></script>
+  <script src="/templates/plugins/dataTables-buttons/js/buttons.colVis.min.js"></script>
+
+  <script src="/templates/plugins/datatables-moment/moment/min/moment.min.js"></script>
+  <script src="/templates/plugins/datatables-moment/moment/min/moment-with-locales.min.js"></script>
+  <script src="/templates/plugins/datatables-moment/moment/min/datetime-moment.js"></script>
+
+  <script>
+    const btnNovo = document.getElementById('botaoNovo');
+    btnNovo.addEventListener('click', () => {
+      $('#ModalServico').modal('show');
+    });
+  </script>
+
+  <script>
+    function colorProgress() {
+      // debugger;
+      const progressBar = document.querySelectorAll('.progress-bar');
+
+
+      [...progressBar].forEach((i, index) => {
+        const badge = [...document.querySelectorAll('.badge')][index];
+
+        let porc = i.style.width.replace(/%/g, '');
+
+        if (porc > 80) {
+          removeClass(i);
+          removeClass(badge);
+          i.classList.add('bg-danger');
+          badge.classList.add('bg-danger');
+        }
+        else if (porc > 50) {
+          removeClass(i);
+          removeClass(badge);
+          i.classList.add('bg-warning');
+          badge.classList.add('bg-warning');
+        }
+        else {
+          removeClass(i);
+          removeClass(badge);
+          i.classList.add('bg-success');
+          badge.classList.add('bg-success');
+        }
+      })
+    }
+    function removeClass(i) {
+      i.classList.remove('bg-success');
+      i.classList.remove('bg-danger');
+      i.classList.remove('bg-warning');
+    }
+
+    colorProgress();
+  </script>
+
+  <script>
+    let intervalId;
+    function criarInterval(intervalo) {
+      if (intervalId) {
+        clearInterval(intervalId);
+      }
+
+      intervalId = setInterval(() => {
+        location.reload();
+      }, intervalo * 60000);
+
+    }
+
+    criarInterval(3);
+  </script>
+
+  <script>
+    $(function () {
+      $('#GRID').DataTable({
+        stateSave: true,
+        language: {
+          "sEmptyTable": "Nenhum registro encontrado",
+          "sInfo": "Mostrando de _START_ até _END_ de _TOTAL_ registros",
+          "sInfoEmpty": "Mostrando de 0 até 0 de 0 registros",
+          "sInfoFiltered": "(Filtrado de _MAX_ registros)",
+          "sInfoPostFix": "",
+          "sInfoThousamds": ".",
+          "sLengthMenu": "_MENU_ registrados por página",
+          "sLoadingRecords": "Carregando ...",
+          "sZeroRecords": "Nenhum registro encontrado",
+          "sSearch": "Pesquisar",
+          "oPaginate": {
+            "sNext": "Próximo",
+            "sPrevious": "Anterior",
+            "sNext": "Primeiro",
+            "sLast": "Ùltimo"
+          },
+          "oAria": {
+            "SortAscending": "Ordenar colunas de forma ascendente",
+            "SortDescending": "Ordenar colunas de forma descendente"
+          },          
+          "sort": '<i class="fas fa-sort"></i>',
+          "sortAscending": '<i class="fas fa-sort-up"></i>',
+          "sortDescending": '<i class="fas fa-sort-down"></i>',
+        },
+        
+        "lengthMenu": [ 
+          [5, 10, 25, 50, 100], 
+          [5, 10, 25, 50, 100] 
+        ]       
+      })
+    });
+  </script>
+</body>
+
+</html>
