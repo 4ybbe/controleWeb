@@ -1,11 +1,19 @@
 # ControleSg
-> Controla o SgIntegra por web
+> Controla o Aplicacoes Windows por interface web
+
+## Aviso
+    - Tive que censurar muita parte do codigo, pode causar alguns conflitos, mas nada muito dificil de se resolver
+    - Caso queira executar o script no windows, você vai precisar mudar alguns metodos relacionado a terminar o processo, nada muito dificil tambem
+
 
 ## Dependencias
 ```sh
 Python
  - psutil
  - flask
+ - mysql-connector-python
+ - paramiko
+ - pythonping
 ```
 
 ## Instalacao
