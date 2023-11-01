@@ -5,6 +5,9 @@
     - Tive que censurar muita parte do codigo, pode causar alguns conflitos, mas nada muito dificil de se resolver
     - Caso queira executar o script no windows, você vai precisar mudar alguns metodos relacionado a terminar o processo, nada muito dificil tambem
 
+## Interface WEB (HTML/CSS/JavaScript)
+    - https://github.com/ColorlibHQ/AdminLTE/
+    - A ideia principal foi fazer uma interface apresentavel, focado no backend. Nao tive muito tempo para fazer meu propria front end :/
 
 ## Dependencias
 ```sh
